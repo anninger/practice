@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ruby on Rails Tutorial Sample App | <%= @title %> </title>
+    <title><%= full_title(@title) %></title>
+    <%= stylesheet_link_tag "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
     <%= csrf_meta_tag %>
   </head>
   <body>
+    <ul>
+      <li><%= link_to "Home", '#' %></li>
+      <li><%= link_to "Help", '#' %></li>
+      <li><%= link_to "Sign in", '#' %></li>
+    </ul>
     <%= yield %>
   </body>
 </html>
